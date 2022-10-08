@@ -1,2 +1,6 @@
 /sprint1
 /sprint2
+/store/target/
+/store/.mvn
+/store/mvnw.cmd
+/store/mvnw
