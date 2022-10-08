@@ -1,4 +1,2 @@
 # proyecto_spring. 
-# En realidad era proyecto_sprint. 
-# Incluso mejor proyecto_scrum. 
-# Pero bueno quedo proyecto_spring  
+# Repositorio para control de fuentes del frontend y backend  del proyecto apolo (Tienda Online)
