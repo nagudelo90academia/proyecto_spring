@@ -10,10 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,6 +31,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
+    private Category category;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
+    private Brand brand;
+
     @Column(nullable = false, unique = true)
     private String name;
 
@@ -47,14 +53,6 @@ public class Product {
 
     @Column(nullable = false, unique = true)
     private Double stock;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
-    private Category category;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
-    private Brand brand;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
